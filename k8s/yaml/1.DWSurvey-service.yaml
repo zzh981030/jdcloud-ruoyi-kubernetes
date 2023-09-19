@@ -1,0 +1,17 @@
+kind: Service
+apiVersion: v1
+metadata:
+  namespace: myserver
+  name: myserver-ruoyi-slb
+  labels:
+    k8s-app: myserver-ruoyi-slb
+spec:
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 31090
+  type: LoadBalancer
+  selector:
+    app: myserver-ruoyi-selector
+    project: myserver

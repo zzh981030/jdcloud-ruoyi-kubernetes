@@ -1,0 +1,30 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  labels:
+    app: myserver-ruoyi-deployment-label
+  name: myserver-ruoyi-deployment
+  namespace: myserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myserver-ruoyi-selector
+  template:
+    metadata:
+      labels:
+        app: myserver-ruoyi-selector
+        project: myserver
+    spec:
+      containers:
+      - name: myserver-ruoyi-container
+        #image: myserver-zzh-cn-north-1.jcr.service.jdcloud.com/dwsurvey:v1 
+        image: myserver-zzh-cn-north-1.jcr.service.jdcloud.com/ruoyi:v1 
+        imagePullPolicy: IfNotPresent
+        #imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+          protocol: TCP
+          name: http
+      imagePullSecrets:
+      - name: jcr-pull-secret
