@@ -1,3 +1,5 @@
+# 本项目基于Ruoyi源项目，结合京东云RDS、容器镜像仓库、京东云k8s集群等产品，实现项目迁移的高可用。项目实施完成后，访问京东云的公网IP即可访问服务。
+
 <p align="center">
 	<img alt="logo" src="https://oscimg.oschina.net/oscnet/up-dd77653d7c9f197dd9d93684f3c8dcfbab6.png">
 </p>
